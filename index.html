@@ -4,391 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petify | Premium Nutritional Treat for Ornamental Fish</title>
-    <style>
-        :root {
-            --primary: #1d4ed8;       /* Deep Petify Blue */
-            --primary-dark: #1e3a8a;  /* Navy Accent */
-            --accent: #f59e0b;        /* Gold/Orange Accent */
-            --bg-light: #f8fafc;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header / Hero */
-        header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem 4rem;
-        }
-
-        .brand-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 0.2rem;
-        }
-
-        .brand-tagline {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-pills {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .pill {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(5px);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: -2rem auto 3rem;
-            padding: 0 1rem;
-        }
-
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 1.75rem;
-            margin: 3rem 0 1.5rem;
-            color: var(--primary-dark);
-            position: relative;
-        }
-
-        /* Grid Layouts */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-badge {
-            align-self: flex-start;
-            background: #dbeafe;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .specs {
-            list-style: none;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-        }
-
-        .specs li {
-            margin-bottom: 0.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        /* Pricing & Combos */
-        .combo-card {
-            border: 2px solid var(--primary);
-            position: relative;
-        }
-
-        .save-tag {
-            position: absolute;
-            top: -12px;
-            right: 15px;
-            background: #ef4444;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-        }
-
-        .price-box {
-            margin-top: auto;
-            padding-top: 1rem;
-            border-top: 1px solid #f1f5f9;
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #94a3b8;
-            font-size: 0.95rem;
-        }
-
-        /* Order Button */
-        .btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background: #16a34a;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background: #15803d;
-        }
-
-        /* Features Bar */
-        .features-grid {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .feature-item h4 {
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .feature-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 2.5rem 1rem;
-            margin-top: 4rem;
-        }
-
-        footer a {
-            color: #93c5fd;
-            text-decoration: none;
-        }
-
-        .contact-details {
-            margin: 1rem 0;
-            font-size: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Header / Hero Section -->
     <header>
-        <h1 class="brand-title">Pëtify</h1>
-        <p class="brand-tagline">Natural & Protein-Rich Nutritional Treat for Ornamental Fish</p>
-        <div class="hero-pills">
-            <span class="pill">High Protein</span>
-            <span class="pill">Enhances Color</span>
-            <span class="pill">Supports Digestion</span>
-            <span class="pill">100% Natural</span>
-        </div>
+        <h1 class="brand-title" id="brand-title"></h1>
+        <p class="brand-tagline" id="brand-tagline"></p>
+        <div class="hero-pills" id="hero-pills"></div>
     </header>
 
     <div class="container">
-
         <!-- Standalone Products -->
         <h2 class="section-title">Single Products</h2>
-        <div class="grid">
-            
-            <!-- Freeze Dried Shrimp -->
-            <div class="card">
-                <div>
-                    <span class="card-badge">Treat</span>
-                    <h3>Freeze Dried Shrimp</h3>
-                    <p>Natural & protein-rich nutritional treat ideal for Discus, Arowana, Cichlids, Flowerhorn, Oscar, Snakehead, and other carnivorous fish.</p>
-                    <ul class="specs">
-                        <li><strong>Protein:</strong> Min 55%</li>
-                        <li><strong>Sizes:</strong> 35g, 50g, 100g</li>
-                        <li><strong>Features:</strong> No added preservatives, natural color booster.</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/919745001101?text=Hi%20Petify,%20I%20want%20to%20order%20Freeze%20Dried%20Shrimp" class="btn">Order via WhatsApp</a>
-            </div>
-
-            <!-- Channa Stick -->
-            <div class="card">
-                <div>
-                    <span class="card-badge">Specialized Feed</span>
-                    <h3>Channa Stick (125g)</h3>
-                    <p>Premium protein-rich fish food formulated specifically for Snakehead (Channa spp.) and carnivorous fish.</p>
-                    <ul class="specs">
-                        <li><strong>Protein:</strong> Min 45%</li>
-                        <li><strong>Net Wt:</strong> 125g</li>
-                        <li><strong>Features:</strong> Omega-3 rich, boosts immunity, enhances natural pattern & color.</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/919745001101?text=Hi%20Petify,%20I%20want%20to%20order%20Channa%20Stick%20125g" class="btn">Order via WhatsApp</a>
-            </div>
-
-            <!-- Arowana Stick -->
-            <div class="card">
-                <div>
-                    <span class="card-badge">Premium Feed</span>
-                    <h3>Arowana Stick (125g)</h3>
-                    <p>Specially formulated for Arowana and large top/mid-water predators for healthy growth and vitality.</p>
-                    <ul class="specs">
-                        <li><strong>Protein:</strong> Min 45%</li>
-                        <li><strong>Net Wt:</strong> 125g</li>
-                        <li><strong>Features:</strong> Fortified with vitamins & minerals for disease resistance.</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/919745001101?text=Hi%20Petify,%20I%20want%20to%20order%20Arowana%20Stick%20125g" class="btn">Order via WhatsApp</a>
-            </div>
-
-        </div>
+        <div class="grid" id="single-products-grid"></div>
 
         <!-- Special Combos -->
         <h2 class="section-title">Special Combo Offers</h2>
-        <div class="grid">
-            
-            <!-- Combo 1 -->
-            <div class="card combo-card">
-                <span class="save-tag">SAVE ₹65</span>
-                <div>
-                    <span class="card-badge">Starter Combo</span>
-                    <h3>Channa Stick + Shrimp 35g</h3>
-                    <p>Channa Stick 125g + Freeze Dried Shrimp 35g</p>
-                </div>
-                <div class="price-box">
-                    <span class="price">₹599</span>
-                    <span class="old-price">₹664</span>
-                </div>
-                <a href="https://wa.me/919745001101?text=Hi%20Petify,%20I%20want%20to%20order%20Combo%20₹599" class="btn">Order Combo</a>
-            </div>
-
-            <!-- Combo 2 -->
-            <div class="card combo-card">
-                <span class="save-tag">SAVE ₹79</span>
-                <div>
-                    <span class="card-badge">Popular Combo</span>
-                    <h3>Channa Stick + Shrimp 50g</h3>
-                    <p>Channa Stick 125g + Freeze Dried Shrimp 50g</p>
-                </div>
-                <div class="price-box">
-                    <span class="price">₹699</span>
-                    <span class="old-price">₹778</span>
-                </div>
-                <a href="https://wa.me/919745001101?text=Hi%20Petify,%20I%20want%20to%20order%20Combo%20₹699" class="btn">Order Combo</a>
-            </div>
-
-            <!-- Combo 3 -->
-            <div class="card combo-card">
-                <span class="save-tag">SAVE ₹99</span>
-                <div>
-                    <span class="card-badge">Value Combo</span>
-                    <h3>Channa Stick + Shrimp 100g</h3>
-                    <p>Channa Stick 125g + Freeze Dried Shrimp 100g</p>
-                </div>
-                <div class="price-box">
-                    <span class="price">₹899</span>
-                    <span class="old-price">₹998</span>
-                </div>
-                <a href="https://wa.me/919745001101?text=Hi%20Petify,%20I%20want%20to%20order%20Combo%20₹899" class="btn">Order Combo</a>
-            </div>
-
-        </div>
+        <div class="grid" id="combo-products-grid"></div>
 
         <!-- Features Bar -->
-        <div class="features-grid">
-            <div class="feature-item">
-                <h4>Natural Ingredients</h4>
-                <p>No artificial preservatives or synthetic flavors.</p>
-            </div>
-            <div class="feature-item">
-                <h4>High Protein</h4>
-                <p>Supports rapid, healthy growth and active vitality.</p>
-            </div>
-            <div class="feature-item">
-                <h4>Color Enhancing</h4>
-                <p>Natural Astaxanthin brings out vibrant skin tones.</p>
-            </div>
-            <div class="feature-item">
-                <h4>Easy Digestion</h4>
-                <p>Formulated to reduce waste and keep tanks clean.</p>
-            </div>
-        </div>
-
+        <div class="features-grid" id="features-grid"></div>
     </div>
 
     <!-- Footer -->
     <footer>
         <h3>Petify Group</h3>
-        <p style="font-size:0.9rem; opacity:0.8;">Based in Kerala, India</p>
+        <p id="footer-location" style="font-size:0.9rem; opacity:0.8;"></p>
         
-        <div class="contact-details">
-            <p>Phone: <a href="tel:+919745001101">+91 97450 01101</a></p>
-            <p>Email: <a href="mailto:petify.shopping@gmail.com">petify.shopping@gmail.com</a></p>
-        </div>
+        <div class="contact-details" id="footer-contact"></div>
 
         <p style="font-size: 0.75rem; opacity: 0.6; margin-top: 1.5rem;">
             © Petify Group. All rights reserved. <br>
@@ -396,5 +41,8 @@
         </p>
     </footer>
 
+    <!-- Load Data and Application Logic -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
