@@ -15,6 +15,7 @@ const petifyData = {
     email: "petify.shopping@gmail.com",
     location: "Based in Kerala, India"
   },
+//   normal products
   singleProducts: [
     {
       id: "shrimp",
@@ -53,6 +54,8 @@ const petifyData = {
       defaultWhatsappMsg: "Hi Petify, I want to order Arowana Stick 125g"
     }
   ],
+
+//   combo
   comboProducts: [
     {
       id: "combo-1",
