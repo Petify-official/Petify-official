@@ -1,6 +1,7 @@
 const petifyData = {
   header: {
     title: "Pëtify",
+    logoUrl: "images/logo.png",
     tagline: "Natural & Protein-Rich Nutritional Treat for Ornamental Fish",
     pills: [
       "High Protein",

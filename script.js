@@ -11,8 +11,23 @@ function getWhatsAppLink(message) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
+// function renderHeader() {
+//   document.getElementById("brand-title").textContent = petifyData.header.title;
+//   document.getElementById("brand-tagline").textContent = petifyData.header.tagline;
+
+//   const pillsContainer = document.getElementById("hero-pills");
+//   pillsContainer.innerHTML = petifyData.header.pills
+//     .map(pill => `<span class="pill">${pill}</span>`)
+//     .join("");
+// }
+
+//header with logo.png
 function renderHeader() {
-  document.getElementById("brand-title").textContent = petifyData.header.title;
+  // Replace text with an img tag using your logoUrl
+  document.getElementById("brand-title").innerHTML = `
+    <img src="${petifyData.header.logoUrl}" alt="Petify Logo" class="brand-logo">
+  `;
+  
   document.getElementById("brand-tagline").textContent = petifyData.header.tagline;
 
   const pillsContainer = document.getElementById("hero-pills");

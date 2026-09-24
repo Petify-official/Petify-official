@@ -15,6 +15,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
+
 body {
   background-color: var(--bg-light);
   color: var(--text-dark);
@@ -29,12 +30,21 @@ header {
   padding: 3rem 1rem 4rem;
 }
 
-.brand-title {
+/* .brand-title {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: 1px;
   margin-bottom: 0.2rem;
+} */
+
+.brand-logo {
+  max-width: 260px;   /* Adjust width based on your logo design */
+  height: auto;        /* Keeps correct image proportions */
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15)); /* Optional drop shadow */
 }
+
 
 .brand-tagline {
   font-size: 1.25rem;
