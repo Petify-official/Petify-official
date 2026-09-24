@@ -23,11 +23,23 @@ function getWhatsAppLink(message) {
 
 //header with logo.png
 function renderHeader() {
-  // Replace text with an img tag using your logoUrl
-  document.getElementById("brand-title").innerHTML = `
-    <img src="${petifyData.header.logoUrl}" alt="Petify Logo" class="brand-logo">
+  // Wrap logo in a clickable anchor link
+  const brandTitleEl = document.getElementById("brand-title");
+  brandTitleEl.innerHTML = `
+    <a href="#" id="logo-link" title="Scroll to top">
+      <img src="${petifyData.header.logoUrl}" alt="Petify Logo" class="brand-logo">
+    </a>
   `;
-  
+
+  // Attach smooth-scroll click listener
+  document.getElementById("logo-link").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
   document.getElementById("brand-tagline").textContent = petifyData.header.tagline;
 
   const pillsContainer = document.getElementById("hero-pills");

@@ -37,12 +37,34 @@ header {
   margin-bottom: 0.2rem;
 } */
 
-.brand-logo {
-  max-width: 260px;   /* Adjust width based on your logo design */
-  height: auto;        /* Keeps correct image proportions */
+/* Enable global smooth scrolling across the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Clickable Logo Styles */
+#logo-link {
   display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+#logo-link:hover {
+  transform: scale(1.03); /* Subtle zoom effect on hover */
+  opacity: 0.95;
+}
+
+#logo-link:active {
+  transform: scale(0.98); /* Press-down response when clicked */
+}
+
+.brand-logo {
+  max-width: 260px;
+  height: auto;
+  display: block;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15)); /* Optional drop shadow */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
 }
 
 
