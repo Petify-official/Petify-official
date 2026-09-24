@@ -47,7 +47,7 @@ html {
   display: inline-block;
   text-decoration: none;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  cursor: pointer;
+  cursor: grabbing;
 }
 
 #logo-link:hover {
@@ -59,12 +59,23 @@ html {
   transform: scale(0.98); /* Press-down response when clicked */
 }
 
+/* Disable dragging and selecting on the logo image */
 .brand-logo {
   max-width: 260px;
   height: auto;
   display: block;
   margin-bottom: 0.5rem;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+  
+  /* Prevents dragging the image to the desktop/another tab */
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
+  /* Disables long-press callout menus on iOS/Android */
+  -webkit-touch-callout: none;
 }
 
 
