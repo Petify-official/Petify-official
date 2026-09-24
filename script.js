@@ -23,13 +23,18 @@ function getWhatsAppLink(message) {
 
 //header with logo.png
 function renderHeader() {
-  // Wrap logo in a clickable anchor link
   const brandTitleEl = document.getElementById("brand-title");
   brandTitleEl.innerHTML = `
     <a href="#" id="logo-link" title="Scroll to top">
-      <img src="${petifyData.header.logoUrl}" alt="Petify Logo" class="brand-logo">
+      <img src="${petifyData.header.logoUrl}" alt="Petify Logo" class="brand-logo" id="main-logo" oncontextmenu="return false;">
     </a>
   `;
+
+  // Attach right-click prevention directly via JavaScript
+  const logoImg = document.getElementById("main-logo");
+  logoImg.addEventListener("contextmenu", (e) => {
+    e.preventDefault(); // Blocks the right-click dropdown menu
+  });
 
   // Attach smooth-scroll click listener
   document.getElementById("logo-link").addEventListener("click", (e) => {
