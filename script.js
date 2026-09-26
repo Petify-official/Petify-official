@@ -47,10 +47,13 @@ function renderHeader() {
 
   document.getElementById("brand-tagline").textContent = petifyData.header.tagline;
 
+// Render Category Hero Pills
   const pillsContainer = document.getElementById("hero-pills");
   pillsContainer.innerHTML = petifyData.header.pills
     .map(pill => `<span class="pill">${pill}</span>`)
     .join("");
+
+
 }
 
 function renderSingleProducts() {
