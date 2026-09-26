@@ -1,3 +1,20 @@
+/**
+ * PETIFY PRODUCT DATA
+ * -------------------
+ * This is the ONLY file you need to edit to add/change products.
+ *
+ * TO ADD A NEW PRODUCT:
+ *   1. Copy any object inside `products` below (a "single" one or a "combo" one).
+ *   2. Give it a unique `id` (lowercase, no spaces — this is also its image folder name).
+ *   3. Put the product's photos in:  images/products/<id>/1.jpg  (2.jpg, 3.jpg, ... if you have more)
+ *   4. List those paths in the `images` array, in the order you want them shown.
+ *      - 1 image? Just put one path in the array — no thumbnails will show.
+ *      - No images yet? Leave the array empty ([]) — a placeholder box will show instead.
+ *   5. Set `type` to "single" or "combo" — that alone decides which section it appears in.
+ *
+ * Nothing else (script.js, styles.css, index.html) needs to change when you add a product.
+ */
+
 const petifyData = {
   header: {
     title: "Pëtify",
@@ -16,10 +33,12 @@ const petifyData = {
     email: "petify.shopping@gmail.com",
     location: "Kerala, India",
   },
-//   normal products
-  singleProducts: [
+
+  products: [
+    // ---------- SINGLE PRODUCTS ----------
     {
       id: "shrimp",
+      type: "single",
       badge: "Treat",
       title: "Freeze Dried Shrimp",
       description: "Natural & protein-rich nutritional treat ideal for Discus, Arowana, Cichlids, Flowerhorn, Oscar, Snakehead, and other carnivorous fish.",
@@ -28,10 +47,16 @@ const petifyData = {
         "<strong>Sizes:</strong> 35g, 50g, 100g",
         "<strong>Features:</strong> No added preservatives, natural color booster."
       ],
+      images: [
+        "images/products/shrimp/1.jpg",
+        "images/products/shrimp/2.jpg",
+        "images/products/shrimp/3.jpg"
+      ],
       defaultWhatsappMsg: "Hi Petify, I want to order Freeze Dried Shrimp"
     },
     {
       id: "channa",
+      type: "single",
       badge: "Specialized Feed",
       title: "Channa Stick (125g)",
       description: "Premium protein-rich fish food formulated specifically for Snakehead (Channa spp.) and carnivorous fish.",
@@ -40,10 +65,14 @@ const petifyData = {
         "<strong>Net Wt:</strong> 125g",
         "<strong>Features:</strong> Omega-3 rich, boosts immunity, enhances natural pattern & color."
       ],
+      images: [
+        "images/products/channa/1.jpg"
+      ],
       defaultWhatsappMsg: "Hi Petify, I want to order Channa Stick 125g"
     },
     {
       id: "arowana",
+      type: "single",
       badge: "Premium Feed",
       title: "Arowana Stick (125g)",
       description: "Specially formulated for Arowana and large top/mid-water predators for healthy growth and vitality.",
@@ -52,43 +81,57 @@ const petifyData = {
         "<strong>Net Wt:</strong> 125g",
         "<strong>Features:</strong> Fortified with vitamins & minerals for disease resistance."
       ],
+      images: [
+        "images/products/arowana/1.jpg"
+      ],
       defaultWhatsappMsg: "Hi Petify, I want to order Arowana Stick 125g"
-    }
-  ],
+    },
 
-//   combo
-  comboProducts: [
+    // ---------- COMBO PRODUCTS ----------
     {
       id: "combo-1",
+      type: "combo",
       saveTag: "SAVE ₹65",
       badge: "Starter Combo",
       title: "Channa Stick + Shrimp 35g",
       description: "Channa Stick 125g + Freeze Dried Shrimp 35g",
       price: "₹599",
       oldPrice: "₹664",
+      images: [
+        "images/products/combo-1/1.jpg"
+      ],
       defaultWhatsappMsg: "Hi Petify, I want to order Combo ₹599"
     },
     {
       id: "combo-2",
+      type: "combo",
       saveTag: "SAVE ₹79",
       badge: "Popular Combo",
       title: "Channa Stick + Shrimp 50g",
       description: "Channa Stick 125g + Freeze Dried Shrimp 50g",
       price: "₹699",
       oldPrice: "₹778",
+      images: [
+        "images/products/combo-2/1.jpg"
+      ],
       defaultWhatsappMsg: "Hi Petify, I want to order Combo ₹699"
     },
     {
       id: "combo-3",
+      type: "combo",
       saveTag: "SAVE ₹99",
       badge: "Value Combo",
       title: "Channa Stick + Shrimp 100g",
       description: "Channa Stick 125g + Freeze Dried Shrimp 100g",
       price: "₹899",
       oldPrice: "₹998",
+      images: [
+        "images/products/combo-3/1.jpg"
+      ],
       defaultWhatsappMsg: "Hi Petify, I want to order Combo ₹899"
     }
   ],
+
   features: [
     {
       title: "Exotic Pets & Birds",
