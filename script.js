@@ -8,7 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   renderFeatures();
   renderFooter();
+  typeHeadline();
 });
+
+function typeHeadline() {
+  const headline = document.getElementById("typing-headline");
+  const text = document.querySelector(".section-title.glow-text").getAttribute("aria-label");
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    headline.textContent = text;
+    return;
+  }
+
+  headline.classList.add("is-typing");
+  let index = 0;
+  const timer = window.setInterval(() => {
+    headline.textContent = text.slice(0, ++index);
+    if (index >= text.length) {
+      window.clearInterval(timer);
+      headline.classList.remove("is-typing");
+    }
+  }, 90);
+}
 
 function getWhatsAppLink(message) {
   const phone = petifyData.contact.whatsappNumber;

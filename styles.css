@@ -339,6 +339,7 @@ html {
 .section-title {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-family: system-ui, sans-serif;
   font-size: 1.5rem;
@@ -354,9 +355,30 @@ html {
   animation: pulse 1.5s infinite ease-in-out;
 }
 
+#typing-headline::after {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin-left: 2px;
+  border-right: 2px solid currentColor;
+  vertical-align: text-bottom;
+  animation: caret-blink 0.8s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 0.3; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot,
+  #typing-headline::after {
+    animation: none;
+  }
 }
 
 /* Footer */
