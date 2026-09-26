@@ -191,3 +191,4 @@ function renderFooter() {
     <p>Email: <a href="mailto:${contact.email}">${contact.email}</a></p>
   `;
 }
+

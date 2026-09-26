@@ -21,6 +21,7 @@ const petifyData = {
     logoUrl: "images/logo.png",
     tagline: "Pure love, premium care",
     pills: [
+      "All India Delivery Available", 
       "Exotic Pets & Birds",
       "Ornamental Fish Food",
       "Cages & Enclosures",
