@@ -86,6 +86,54 @@ const petifyData = {
       ],
       defaultWhatsappMsg: "Hi Petify, I want to order Arowana Stick 125g"
     },
+    {
+      id: "artemia-stick",
+      type: "single",
+      badge: "Premium Feed",
+      title: "Artemia Stick (150g)",
+      description: "Natural source of protein from Artemia designed to enhance growth, color, and immunity for Discus, Arowana, Cichlids, Flowerhorn, Oscar, Snakehead, and other ornamental fish.",
+      specs: [
+        "<strong>Protein:</strong> Min 48%",
+        "<strong>Net Wt:</strong> 150g",
+        "<strong>Features:</strong> Easy to digest, natural color booster, immune support."
+      ],
+      images: [
+        "images/products/artemia-stick/1.jpg"
+      ],
+      defaultWhatsappMsg: "Hi Petify, I want to order Artemia Stick 150g"
+    },
+    {
+      id: "blood-worm-stick",
+      type: "single",
+      badge: "Premium Feed",
+      title: "Blood Worm Stick (150g)",
+      description: "Highly nutritious feed made with natural blood worm, rich in protein and carotenoids to boost immunity, growth, and natural colors.",
+      specs: [
+        "<strong>Protein:</strong> Min 40%",
+        "<strong>Net Wt:</strong> 150g",
+        "<strong>Features:</strong> Soft texture, easy to digest, clean water formula."
+      ],
+      images: [
+        "images/products/blood-worm-stick/1.jpg"
+      ],
+      defaultWhatsappMsg: "Hi Petify, I want to order Blood Worm Stick 150g"
+    },
+    {
+      id: "krill-pellets",
+      type: "single",
+      badge: "Premium Feed",
+      title: "Krill Pellets (150g)",
+      description: "High-quality marine protein source enriched with Antarctic Krill Meal, Omega-3 fatty acids, and natural Astaxanthin for vibrant color and vitality.",
+      specs: [
+        "<strong>Protein:</strong> Min 48%",
+        "<strong>Net Wt:</strong> 150g",
+        "<strong>Features:</strong> Astaxanthin 100 ppm, enhances color, supports muscle growth."
+      ],
+      images: [
+        "images/products/krill-pellets/1.jpg"
+      ],
+      defaultWhatsappMsg: "Hi Petify, I want to order Krill Pellets 150g"
+    },
 
     // ---------- COMBO PRODUCTS ----------
     {
